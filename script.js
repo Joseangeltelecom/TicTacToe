@@ -45,7 +45,6 @@ function startGame(){
   });
 }
 
-
 // controller: 
 function handleClick(e) {
   const cell = e.target;
