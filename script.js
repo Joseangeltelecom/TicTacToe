@@ -1,9 +1,9 @@
-const player = (markerClass) => {
-  return {markerClass}
+const player = (marker,markerClass) => {
+  return {marker,markerClass}
 }
 
-const player1 = player('x')
-const player2 = player('circle')
+const player1 = player('X','x')
+const player2 = player('O','circle')
 
 // HTML Elements
 const DOM = (() => {
@@ -91,7 +91,7 @@ function endGame(draw){
   if (draw) {
     DOM.statusDiv.innerHTML = 'Draw!'
   } else {
-    DOM.statusDiv.innerHTML = `${circleTurn ? "O's": "X's"} Win!`
+    DOM.statusDiv.innerHTML = `${circleTurn ? player2.marker + "'S": player1.marker + "'S"} Win!`
   }
 }
     
@@ -112,4 +112,4 @@ return {startGame, handleClick,placeMark,checkWin, endGame, isDraw,swapTurns}
 })();
 
 gameBoard.startGame();
-//************************************************************************************************** */
+//*************************************************************************************************************** */
